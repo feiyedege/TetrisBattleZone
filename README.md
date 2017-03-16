@@ -7,8 +7,8 @@
 4. mongoose 数据库；  
   
 前端：  
-React框架
+React技术栈（React+Redux+Router+Webpack）  
 
-实现功能：  
+实现功能：  
 1-6人多人对战；  
 多人在线聊天。
