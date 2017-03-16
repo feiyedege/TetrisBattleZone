@@ -1,0 +1,794 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body, .bigbox{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:  url('fonts/icomoon.eot?qw0bhq');
+	src:  url('fonts/icomoon.eot?qw0bhq#iefix') format('embedded-opentype'),
+	url('fonts/icomoon.ttf?qw0bhq') format('truetype'),
+	url('fonts/icomoon.woff?qw0bhq') format('woff'),
+	url('fonts/icomoon.svg?qw0bhq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+input:focus{
+	outline: none;
+}
+
+input[type=button]{
+	cursor:pointer;
+}
+
+ul, li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+
+/*game相关css开始*/
+table,tr,td{
+	border-collapse: collapse;
+}
+td.I{
+	background:url(../img/0.jpg);
+}
+td.T{
+	background:url(../img/1.jpg);
+}
+td.L{
+	background:url(../img/2.jpg);
+}
+td.J{
+	background:url(../img/3.jpg);
+}
+td.S{
+	background:url(../img/4.jpg);
+}
+td.Z{
+	background:url(../img/5.jpg);
+}
+td.O{
+	background:url(../img/6.jpg);
+}
+td.A{
+	background:url(../img/7.png);
+}
+td.number1{
+	background:url(../img/1.gif);
+}
+td.number2{
+	background:url(../img/2.gif);
+}
+td.number3{
+	background:url(../img/3.gif);
+}
+/*game相关css结束*/
+
+
+/*Header组件开始*/
+header.header{
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background: -webkit-linear-gradient(top, lightseagreen, #eee);
+	color:#077d7d;
+}
+.header .title{
+	position: absolute;
+	left: 20px;
+	top: 15px;
+	font-size:30px;
+	line-height: 30px;
+	font-family: "宋体";
+}
+.header .welcome{
+	position: absolute;
+	right: 120px;
+	top: 20px;
+	font-size:20px;
+	line-height: 20px;
+}
+.header .exit{
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	font-size:14px;
+	line-height: 20px;
+	color:#aaa;
+	cursor:pointer;
+}
+/*Header组件结束*/
+
+/*Aside组件开始*/
+aside.leftSide{
+	padding-top: 20px;
+	position: fixed;
+	left: 0;
+	top: 60px;
+	background: #424a5d;
+	width: 220px;
+	height: calc(100% - 80px);
+}
+.leftSide .sideMenu li{
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+.leftSide .sideMenu li a{
+	position: relative;
+	display: block;
+	height: 20px;
+	padding: 15px;
+	text-indent: 2em;
+	color:#aeb2b7;
+}
+.leftSide .sideMenu li a::before{
+	font-family: "icomoon";
+	content:"";
+	position: absolute;
+	left: -10px;
+	top: 18px;
+}
+.leftSide .sideMenu li.side-rooms a::before{
+	content:"";
+}
+.leftSide .sideMenu li.side-records a::before{
+	content:"";
+}
+.leftSide .sideMenu li.side-alluser a::before{
+	content:"";
+}
+.leftSide .sideMenu li.side-battle a::before{
+	content:"";
+}
+.leftSide .sideMenu li a.active{
+	background: #68dff0;
+	color: #fff;
+}
+/*Aside组件结束*/
+
+/*Login组件开始*/
+.mask{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 20;
+}
+.form-login{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translateX(-50%);
+	width: 330px;
+	height: 310px;
+	border-radius:10px;
+	background: #fff;
+}
+.form-login h2{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	height: 20px;
+	background: #67DFF0;
+	color:#fff;
+	text-align: center;
+	padding: 25px;
+	font-size:20px;
+	line-height: 20px;
+	font-weight: normal;
+}
+.form-login .login-wrap{
+	padding: 20px;
+	color:#077d7d;
+}
+.form-login .login-wrap input{
+	border: 1px solid #ccc;
+	padding: 6px 12px;
+	width: 264px;
+	height: 20px;
+	font-size:14px;
+	line-height: 20px;
+	display: block;
+	border-radius:4px;
+}
+.form-login .login-wrap input:focus{
+	border-color: #66afe9;
+	outline:none;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+.form-login .login-wrap button{
+	border: 1px solid #48bcb4;
+	background: #68dff0;
+	color: #fff;
+	padding: 6px 12px;
+	width: 290px;
+	height: 34px;
+	font-size:14px;
+	line-height: 20px;
+	display: block;
+	border-radius:4px;
+}
+.form-login .login-wrap button:hover{
+	background: #48bcb4;
+	border-color:#48bcb4;
+}
+.form-login .login-wrap button:before{
+	content:"锁";
+	color: red;
+}
+.form-login hr{
+	margin: 20px 0;
+}
+.form-login .registration{
+	text-align: center;
+	height: 36px;
+	font-size:12px;
+}
+.form-login .registration a{
+	color: #428bca;
+}
+.form-login .registration a:hover{
+	color: #2a6496;
+}
+/*Login组件结束*/
+
+/*Rooms组件开始*/
+#main-content{
+	position: absolute;
+	width: calc(100% - 220px);
+	height: calc(100% - 60px);
+	left: 220px;
+	top: 60px;
+}
+#main-content h2{
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	color:rgb(185, 165, 4);
+	text-shadow:2px 2px 2px grey;
+	background: -webkit-linear-gradient(top, #eee, white);
+	border-bottom: 1px dotted gray;
+}
+#main-content .createRoom{
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	width: 120px;
+	height: 60px;
+	line-height: 60px;
+	border-radius:6px;
+	text-align: center;
+	font-size: 20px;
+	cursor:pointer;
+	color:#888;
+	text-shadow:2px 2px 2px grey;
+	background: -webkit-linear-gradient(top, silver, white);
+}
+#main-content .createRoom:focus{
+	outline:none;
+}
+/*Rooms组件结束*/
+
+/*BattleRoom组件开始*/
+.battleRoom .header{
+	height: 40px;
+	background: lightblue;
+	text-indent: 2em;
+	line-height: 40px;
+}
+.battleRoom .content{
+	position: relative;
+	height: calc(100% - 40px);
+	background: #6EA1A4;
+}
+.battleRoom .content .enemies{
+	position: absolute;
+	left: 0;
+	top: 20px;
+	width: 480px;
+	height: 100%;
+	padding-left: 20px;
+}
+.battleRoom .content .enemies li{
+	position: absolute;
+	left: 20px;
+	top: 0px;
+	width: 120px;
+	padding: 10px;
+	/*margin-right: 20px;*/
+	/*margin-bottom: 10px;*/
+	height: 230px;
+	background: #256A67;
+	border-radius:5px;
+}
+.battleRoom .content .enemies li:nth-child(2){
+	left: 180px;
+}
+.battleRoom .content .enemies li:nth-child(3){
+	left: 20px;
+	top: 260px;
+}
+.battleRoom .content .enemies li:nth-child(4){
+	left: 180px;
+	top: 260px;
+}
+.battleRoom .content .enemies li:nth-child(5){
+	left: 340px;
+	top: 260px;
+}
+.battleRoom .content .enemies li .enInfo{
+	position: relative;
+	margin-bottom: 10px;
+	height: 20px;
+	line-height: 20px;
+	font-size:14px;
+	text-indent: 6px;
+	background: red;
+	border-radius:4px;
+	background: -webkit-linear-gradient(top, silver, #7CC919, silver);
+}
+.battleRoom .content .enemies li .enInfo i{
+	position: absolute;
+	left: 56px;
+	top: 2px;
+	font-size: 12px;
+	text-indent: 0px;
+	font-weight: normal;
+	white-space: nowrap;
+	transform: scale(0.8);
+}
+.battleRoom .content .enemies li table{
+	height: 200px;
+	box-shadow:0px 1px 1px #849E9F;
+}
+.battleRoom .content .enemies li td{
+	width: 10px;
+	height: 10px;
+	background-color: #212121;
+	background-size: cover;
+}
+.battleRoom .content .mine{
+	position: absolute;
+	left: 500px;
+	top: 20px;
+	float: left;
+	width: 216px;
+	padding: 10px 15px;
+	height: 490px;
+	margin-right: 20px;
+	background: gray;
+	border-radius:10px;
+	font-size:12px;
+}
+.battleRoom .content .mine .myInfo{
+	position: relative;
+	height: 54px;
+	margin-bottom: 10px;
+	font-size:20px;
+	line-height: 54px;
+	text-indent: 1em;
+	border-radius:10px;
+	background: -webkit-linear-gradient(top, silver, #7CC919, silver);
+}
+.battleRoom .content .mine .myInfo i{
+	position: absolute;
+	left: 124px;
+	top: 12px;
+	font-size:14px;	
+	text-indent: 0px;
+	font-weight: normal;
+}
+.battleRoom .content .mine table{
+	height: 360px;
+	margin-bottom: 10px;
+	box-shadow:0px 1px 1px #849E9F;
+}
+.battleRoom .content .mine td{
+	width: 18px;
+	height: 18px;
+	background-color: #212121;
+	background-size: cover;
+}
+.battleRoom .content .mine .daoju{
+	display: flex;
+	align-items: flex-end;
+	height: 18px;
+	margin-bottom: 10px;
+	border:1px inset #343635;
+	box-shadow:0px 1px 1px #849E9F;
+	background: #343635;
+	color: #52C7BF;
+	text-indent: 4px;
+	line-height: 20px;
+	border-radius:2px;
+}
+.battleRoom .content .mine .daoju li{
+	width: 16px;
+	height: 16px;
+	margin-right: 4px;
+	background: url(../img/1.gif);
+	background-size: cover;
+}
+.battleRoom .content .mine .daoju li.djItem2{
+	background: url(../img/2.gif);
+	background-size: cover;
+}
+.battleRoom .content .mine .daoju li.djItem3{
+	background: url(../img/3.gif);
+	background-size: cover;
+}
+.battleRoom .content .mine .daoju:before{
+	content:"道具:";
+}
+.battleRoom .content .mine .shuoming{
+	border:1px inset #343635;
+	box-shadow:0px 1px 1px #849E9F;
+	background: #343635;
+	color: #52C7BF;
+	text-indent: 4px;
+	line-height: 16px;
+	border-radius:2px;
+}
+.battleRoom .content .mine .shuoming:before{
+	content:"说明:";
+}
+.battleRoom .content .mine .next{
+	position: absolute;
+	left: -160px;
+	top: 0;
+	width: 130px;
+	height: 230px;
+	padding: 10px 15px;
+	background: gray;
+	border-radius:10px;
+}
+.battleRoom .content .mine .next h3{
+	text-align: center;
+	height: 54px;
+	margin-bottom: 10px;
+	font-size:20px;
+	line-height: 54px;
+	border-radius:10px;
+	background: -webkit-linear-gradient(top,white, silver,white);
+}
+.battleRoom .content .mine .next div{
+	width: 130px;
+	height: 166px;
+	background: #212121;
+	border-radius: 10px;
+}
+.battleRoom .content .mine .next table{
+	width: 72px;
+	height: 72px;
+	margin: auto;
+	margin-bottom: 10px;
+	border: none;
+	box-shadow:none;
+}
+.battleRoom .content .rightSide{
+	position: absolute;
+	left: 790px;
+	top: 20px;
+	width: calc(100% - 810px);
+	height: 510px;
+	margin-right: 20px;
+}
+.battleRoom .content .rightSide .sysMessage{
+	position: relative;
+	padding: 10px;
+	height: 226px;
+	background: #256A67;
+	margin-bottom: 10px;
+	border-radius:10px;
+	border:2px outset #7EA2AE;
+	box-shadow:2px 2px 2px 1px black;
+}
+.battleRoom .content .rightSide .sysMessage .sendMessage{
+	height: 180px;
+	padding: 10px;
+	font-size:12px;
+	border-radius:6px;
+	box-shadow:1px 1px 1px black;
+	background: #DCFEFF;
+	overflow:auto;
+}
+.battleRoom .content .rightSide .sysMessage input[type=text]{
+	position: absolute;
+	left: 10px;
+	bottom: 6px;
+	border: 2px inset gray;
+	width: calc(100% - 80px);
+	height: 20px;
+	text-indent: 8px;
+	font-size:14px;
+}
+.battleRoom .content .rightSide .sysMessage input[type=button]{
+	position: absolute;
+	right: 10px;
+	bottom: 6px;
+	width: 40px;
+	height: 24px;
+	border-radius:4px;
+	box-shadow:1px 1px 1px black;
+}
+.battleRoom .content .rightSide .chooseGroup{
+	position: relative;
+	height: 116px;
+	background: #256A67;
+	margin-bottom: 10px;
+	border-radius:10px;
+	border:2px outset #7EA2AE;
+	box-shadow:2px 2px 2px 1px black;
+}
+.battleRoom .content .rightSide .chooseGroup p{
+	position: absolute;
+	left: 0;
+	top: 0;
+	color:white;
+	font-size:16px;
+	padding: 18px 6px;
+	text-align: center;
+	width: 28px;
+	height: 80px;
+	box-shadow:2px 0px 0px black;
+}
+.battleRoom .content .rightSide .chooseGroup .groups{
+	width: calc(100% - 40px);
+	height: 100%;
+	position: absolute;
+	left: 42px;
+	top: 0;
+}
+.battleRoom .content .rightSide .chooseGroup .groups div{
+	height: 50%;
+	display: -webkit-flex;
+	justify-content: space-around;
+	align-items:center;
+}
+.battleRoom .content .rightSide .chooseGroup .groups .abc input{
+	width: 40px;
+	height: 40px;
+	border-radius:50%;
+	background: -webkit-linear-gradient(top, silver, #F6BC12, silver);
+	border-color:silver;
+	box-shadow:1px 1px 1px black;
+	text-shadow:1px 1px 1px black;
+	font-size:20px;
+	color: #fff;
+	text-align: center;
+	line-height: 36px;
+}
+.battleRoom .content .rightSide .chooseGroup .groups .abc input:nth-child(2){
+	background: -webkit-linear-gradient(top, silver, #29AEE6, silver);
+}
+.battleRoom .content .rightSide .chooseGroup .groups .abc input:nth-child(3){
+	background: -webkit-linear-gradient(top, silver, #F86633, silver);
+}
+.battleRoom .content .rightSide .chooseGroup .groups .single input{
+	width: 90px;
+	height: 30px;
+	border-color:silver;
+	box-shadow:1px 1px 1px black;
+	text-shadow:1px 1px 1px black;
+	font-size:20px;
+	color: #fff;
+	line-height: 26px;
+	text-align: center;
+	border-radius:15px;
+	background: -webkit-linear-gradient(top, silver, #7CC919, silver);
+}
+.battleRoom .content .rightSide .start{
+	position: relative;
+	height: 56px;
+	background: #256A67;
+	border-radius:10px;
+	margin-bottom: 10px;
+	border:2px outset #7EA2AE;
+	box-shadow:2px 2px 2px 1px black;
+}
+.battleRoom .content .rightSide .start input{
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 70px;
+	height: 30px;
+	border-radius: 5px;
+	background: -webkit-linear-gradient(top, white, #61CEED, white);
+	box-shadow:1px 1px 1px black;
+	font-size:18px;
+	color: #fff;
+	text-shadow:1px 1px 1px black;
+	line-height: 28px;
+}
+.battleRoom .content .rightSide .exit{
+	width: 100%;
+	position: relative;
+}
+.battleRoom .content .rightSide .exit input{
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 70px;
+	height: 30px;
+	border-radius: 5px;
+	background: -webkit-linear-gradient(top, white, silver, white);
+	box-shadow:1px 1px 1px black;
+	font-size:18px;
+	color: #EAC158;
+	text-shadow:1px 1px 1px black;
+	line-height: 28px;
+}
+/*BattleRoom组件结束*/
+
+/*RoomLi组件开始*/
+.room{
+	float: left;
+	position: relative;
+	margin:20px;
+	width: 210px;
+	height: 210px;
+	border-radius:50%;
+	background: url("../img/desk.gif") no-repeat center center, gray;
+}
+.room ul{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translateX(-50%) translateY(-50%);
+	width: 50px;
+	height: 50px;
+}
+.room ul li{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius:50%;
+	background: url("../img/031.png") no-repeat center center;
+	background-size:cover;
+	transform: translateY(-80px);
+	color:cyan;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: center;
+	line-height: 16px;
+}
+.room ul li:nth-child(2){
+	transform: rotate(60deg) translateY(-80px);
+}
+.room ul li:nth-child(3){
+	transform: rotate(120deg) translateY(-80px);
+}
+.room ul li:nth-child(4){
+	transform: rotate(180deg) translateY(-80px);
+}
+.room ul li:nth-child(5){
+	transform: rotate(240deg) translateY(-80px);
+}
+.room ul li:nth-child(6){
+	transform: rotate(300deg) translateY(-80px);
+}
+.room ul li b{
+	font-family: "icomoon";
+	position: absolute;
+	color: #fff;
+	width: 20px;
+	height: 20px;
+	font-size:20px;
+	line-height: 100%;
+	text-align: center;
+	right: 6px;
+	bottom: 6px;
+}
+.room img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform:translateX(-50%) translateY(-50%);
+}
+.room .roomMask{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius:50%;
+	text-align: center;
+	color:Crimson;
+	line-height: 20px;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size:16px;
+	font-weight: bold;
+	cursor:pointer;
+}
+/*RoomLi组件结束*/
+
+/* AllUser组件开始 */
+.users, .msgbox{
+	box-sizing:border-box;
+	float: left;
+	padding: 20px;
+	width: 50%;
+	height: calc(100% - 61px);
+	background: -webkit-linear-gradient(top, #eee 20%, #bbb);
+	font-style: italic;
+	color: #527;
+}
+.users{
+	color: gold;
+	font-weight: bold;
+	border-right: 2px dotted #bbb;
+	text-shadow: 1px 1px 1px black;
+}
+.msg{
+	height:calc(100% - 40px);
+	overflow:auto;
+}
+.users li{
+	float: left;
+	padding: 8px;
+	border-radius:50%;
+	background: -webkit-linear-gradient(top, #333, #ddd);
+	margin-right: 20px;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px 2px 1px #000;
+}
+.sendmsg{
+	position: absolute;
+	box-sizing:border-box;
+	width: 50%;
+	height: 30px;
+	right: 0px;
+	bottom: 20px;
+}
+.sendmsg input[type=text]{
+	width: 80%;
+	height: 26px;
+	margin-right: 10px;
+	border-radius:6px;
+	background: #999;
+	border-color:#999;
+}
+.sendmsg input[type=button]{
+	/*width: 80%;*/
+	height: 30px;
+	margin-right: 10px;
+	border-radius: 6px;
+	padding: 0 8px;
+	background: -webkit-linear-gradient(top, white, silver, white);
+	box-shadow:1px 1px 1px black;
+	text-shadow:1px 1px 1px black;
+	font-size:16px;
+	color: cyan;
+}
+/* AllUser组件结束 */
+
+/* Help组件开始 */
+.helpme{
+	padding: 20px 30px;
+	list-style-type: circle;
+}
+.helpme li{
+	list-style-type: circle;
+	padding: 10px;
+}
+/* Help组件结束 */
